@@ -15,7 +15,7 @@ import static org.junit.Assert.assertEquals;
 public class FuctionalityTest {
 
     static AppiumDriver<MobileElement> driver;
-    public static void main(String[] args) throws MalformedURLException, InterruptedException {
+    public static void main(String[] args) throws MalformedURLException {
 
         DesiredCapabilities cap = new DesiredCapabilities();
         cap.setCapability(MobileCapabilityType.DEVICE_NAME, "192.168.85.105:5555");
@@ -30,7 +30,8 @@ public class FuctionalityTest {
         TouchAction touchAction = new TouchAction(driver);
 
 
-        System.out.println(driver.findElementById("android:id/text1").getTagName());
+        driver.findElementById("android:id/text1").click();
+        System.out.println(driver.findElementById("android:id/text1").getText());
 
 
       /*
